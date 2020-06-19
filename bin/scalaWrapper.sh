@@ -1,0 +1,7 @@
+#!/bin/bash
+EXITSTATUS=1
+ ("${SPARK_APP_CORE_SCRIPT}"  -c {MAIN_CALSS_NAME} -p  {PROPERTY_FILE_PATH} -n {JOB_NAME} -j  {JAR_NAME})
+EXITSTATUS=$?
+if [ ${EXITSTATUS} -ne 0 ]; then
+   exit ${EXITSTATUS}
+fi
